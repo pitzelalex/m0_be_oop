@@ -24,7 +24,23 @@ p unicorn1.say("Itz ya boi Frank")
 #  it should have a pet attribute, that is a bat, by default BUT it could be dynamic if info is passed in initially
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
+puts "---------------------------"
 
+class Vampire
+  def initialize(name, pet = "bat")
+    @name = name
+    @pet = pet
+    @thirsty = true
+  end
+
+  def drink
+    @thirsty = false
+  end
+end
+vamp1 = Vampire.new("Frank", "Dog")
+p vamp1
+vamp1.drink
+p vamp1
 
 #  Write a Dragon class
 #  it should have a dynamic name attribute (string)
@@ -32,7 +48,38 @@ p unicorn1.say("Itz ya boi Frank")
 #  it should have a dynamic color attribute (string)
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
+puts "-------------------------------"
 
+class Dragon
+  def initialize(name, rider, color)
+    @name = "#{name}"
+    @rider = "#{rider}"
+    @color = "#{color}"
+    @is_hungry = true
+  end
+  def eat
+    $times_eaten + 1
+    if $times_eaten >= 4
+      @is_hungry = false
+    end
+  end
+  $times_eaten = 0
+end
+
+dragon1 = Dragon.new("Frank", "Joe", "blue")
+p dragon1
+
+dragon1.eat
+p dragon1
+dragon1.eat
+p dragon1
+dragon1.eat
+p dragon1
+dragon1.eat
+p dragon1
+dragon1.eat
+p dragon1
+puts "I can't figure this last part out...."
 
 #  Write a Hobbit class
 #  it should have a dynamic name attribute (string)
