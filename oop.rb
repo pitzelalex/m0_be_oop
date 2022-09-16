@@ -89,3 +89,46 @@ puts "I can't figure this last part out...."
 #  it should have an is_adult attribute (boolean) that is false by default. once a Hobbit is 33, it should be an adult
 #  it should have an is_old attribute that defaults to false. once a Hobbit is 101, it is old.
 #  it should have a has_ring attribute. If the Hobbit's name is "Frodo", true, if not, false.
+
+class Hobbit
+  def initialize (name, disposition, age = 0)
+    @name = "#{name}"
+    @disposition = "#{disposition}"
+    @age = age
+    @is_adult = if @age >= 33
+                  true
+                else
+                  false
+                end
+    @is_old = if @age >= 101
+                  true
+                else
+                  false
+                end
+    @has_ring = if name == "Frodo"
+                  true
+                else
+                  false
+                end
+  end
+  def celebrate_birthday
+    @age = @age + 1
+    if @age >= 33
+      @is_adult = true
+    else
+    end
+    if @age >= 101
+      @is_old = true
+    else
+    end
+  end
+end
+
+hobbit1 = Hobbit.new("Frodo", "kind")
+hobbit2 = Hobbit.new("Frank", "Lazy", 45)
+hobbit3 = Hobbit.new("Joe", "Funny", 150)
+p hobbit1
+p hobbit2
+p hobbit3
+
+## I figured out the thing I couldn't figure out from the previous exercise but absolutely do not have time to change the code...
